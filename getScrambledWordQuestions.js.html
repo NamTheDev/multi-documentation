@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: customSearch.js</title>
+    <title>JSDoc: Source: getScrambledWordQuestions.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: customSearch.js</h1>
+    <h1 class="page-title">Source: getScrambledWordQuestions.js</h1>
 
     
 
@@ -26,28 +26,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { default: fetch } = require('node-fetch');
+            <pre class="prettyprint source linenums"><code>const { default: fetch } = require("node-fetch");
+
 /**
- * 
- * @param {String} query query to search
- * @param {boolean} imageSearchOption toggle if results should be image or not
- * @param {String} apiKey API key from googleapis
- * @param {String} searchEngineId search engine ID from googleapis
- * @returns {JSON}
+ * Get questions for scrambled words game.
+ * @param {object} config Configuration parameter.
+ * @param {number} config.words Number of questions that are going to be generated.
  */
-async function customSearch(query, apiKey, searchEngineId, imageSearchOption) {
-  const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${query}${imageSearchOption ? `&amp;searchType=image` : ''}&amp;key=${apiKey}&amp;cx=${searchEngineId}`;
-  return fetch(apiUrl)
-    .then(async response => {
-      const data = await response.json()
-      return data;
-    })
-    .catch(error => {
-      console.trace('Error fetching image search results: ' + error.message), process.exit(0);
+async function getScrambledWordQuestions(config = { words: 10 }) {
+    if (typeof config.words !== 'number') throw console.trace("Parameter 'words' must be a number");
+
+    const response = await fetch(`https://random-word-api.vercel.app/api?words=${config.words}`);
+    if (!response.ok) {
+        throw console.trace(`Failed to fetch words. Status: ${response.status}`);
+    }
+
+    const words = await response.json();
+
+    // Scramble the words
+    const scrambledWords = words.map(word => {
+        const scrambled = word.split('').sort(() => Math.random() - 0.5).join('');
+        return { word, scrambled };
     });
+
+    return scrambledWords;
 }
 
-module.exports = customSearch</code></pre>
+module.exports = getScrambledWordQuestions;
+</code></pre>
         </article>
     </section>
 
