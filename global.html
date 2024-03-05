@@ -1014,7 +1014,7 @@
     
 
     
-    <h4 class="name" id="randomName"><span class="type-signature">(async) </span>randomName<span class="signature">(Your_names_list)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    <h4 class="name" id="randomName"><span class="type-signature">(async) </span>randomName<span class="signature">(apiKey, config)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
@@ -1054,7 +1054,113 @@
 
         <tr>
             
-                <td class="name"><code>Your_names_list</code></td>
+                <td class="name"><code>apiKey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">"firstname"</span>
+|
+
+<span class="param-type">"surname"</span>
+|
+
+<span class="param-type">"fullname"</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>names_list</code></td>
             
 
             <td class="type">
@@ -1067,10 +1173,25 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">custom names list</td>
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -1111,7 +1232,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="randomName.js.html">randomName.js</a>, <a href="randomName.js.html#line8">line 8</a>
+        <a href="randomName.js.html">randomName.js</a>, <a href="randomName.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -1147,7 +1268,7 @@
     </dt>
     <dd>
         
-<span class="param-type">String</span>
+<span class="param-type">string</span>
 
 
     </dd>
@@ -1316,7 +1437,7 @@
     
 
     
-    <h4 class="name" id="randomRate"><span class="type-signature">(async) </span>randomRate<span class="signature">(TYPE, config)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="randomRate"><span class="type-signature">(async) </span>randomRate<span class="signature">(type, config)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -1356,7 +1477,7 @@
 
         <tr>
             
-                <td class="name"><code>TYPE</code></td>
+                <td class="name"><code>type</code></td>
             
 
             <td class="type">
@@ -1384,6 +1505,9 @@
 |
 
 <span class="param-type">"tall"</span>
+|
+
+<span class="param-type">"relationship"</span>
 |
 
 <span class="param-type">"gender"</span>
@@ -1469,7 +1593,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="randomRate.js.html">randomRate.js</a>, <a href="randomRate.js.html#line34">line 34</a>
+        <a href="randomRate.js.html">randomRate.js</a>, <a href="randomRate.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -2042,13 +2166,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Database.html">Database</a></li><li><a href="textDatabase.html">textDatabase</a></li></ul><h3>Global</h3><ul><li><a href="global.html#customSearch">customSearch</a></li><li><a href="global.html#getScrambledWordQuestions">getScrambledWordQuestions</a></li><li><a href="global.html#getTriviaQuestions">getTriviaQuestions</a></li><li><a href="global.html#randomEightBallAnswer">randomEightBallAnswer</a></li><li><a href="global.html#randomName">randomName</a></li><li><a href="global.html#randomNumber">randomNumber</a></li><li><a href="global.html#randomRate">randomRate</a></li><li><a href="global.html#randomTOD">randomTOD</a></li><li><a href="global.html#randomWUR">randomWUR</a></li><li><a href="global.html#shibeOnline">shibeOnline</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="textDatabase.html">textDatabase</a></li></ul><h3>Global</h3><ul><li><a href="global.html#customSearch">customSearch</a></li><li><a href="global.html#getScrambledWordQuestions">getScrambledWordQuestions</a></li><li><a href="global.html#getTriviaQuestions">getTriviaQuestions</a></li><li><a href="global.html#randomEightBallAnswer">randomEightBallAnswer</a></li><li><a href="global.html#randomName">randomName</a></li><li><a href="global.html#randomNumber">randomNumber</a></li><li><a href="global.html#randomRate">randomRate</a></li><li><a href="global.html#randomTOD">randomTOD</a></li><li><a href="global.html#randomWUR">randomWUR</a></li><li><a href="global.html#shibeOnline">shibeOnline</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Dec 07 2023 20:12:03 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Jan 12 2024 18:37:21 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>
